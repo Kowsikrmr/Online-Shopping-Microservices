@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Online Shopping Microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Wireless Mouse\",\n  \"description\": \"USB wireless mouse\",\n  \"price\": 799.0,\n  \"stockQuantity\": 20\n}"
+        },
+        "url": {
+          "raw": "{{productBaseUrl}}/products",
+          "host": [
+            "{{productBaseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Products",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{productBaseUrl}}/products",
+          "host": [
+            "{{productBaseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productId\": 1,\n  \"quantity\": 2\n}"
+        },
+        "url": {
+          "raw": "{{orderBaseUrl}}/orders",
+          "host": [
+            "{{orderBaseUrl}}"
+          ],
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Orders",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{orderBaseUrl}}/orders",
+          "host": [
+            "{{orderBaseUrl}}"
+          ],
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "productBaseUrl",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "orderBaseUrl",
+      "value": "http://localhost:8082"
+    }
+  ]
+}
